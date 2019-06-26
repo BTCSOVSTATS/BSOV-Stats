@@ -19,10 +19,10 @@ const _ZERO_BN = new Eth.BN(0, 10);
 /* contract constants */
 /* todo: pull these from the contract */
 /* todo: move these into some kind of contract helper class */
-const _CONTRACT_NAME = "0xBitcoin";
-const _CONTRACT_SYMBOL = "0xBTC";
+const _CONTRACT_NAME = "BitcoinSoV";
+const _CONTRACT_SYMBOL = "BSOV";
 const _BLOCKS_PER_READJUSTMENT = 1024;
-const _CONTRACT_ADDRESS = "0xB6eD7644C69416d67B522e20bC294A9a9B405B31";
+const _CONTRACT_ADDRESS = "0x26946ada5ecb57f3a1f91605050ce45c482c9eb1";
 const _MINT_TOPIC = "0xcf6fbb9dcea7d07263ab4f5c3a92f53af33dffc421d9d121e1c74b307e68189d";
 const _MAXIMUM_TARGET_STR = "27606985387162255149739023449108101809804435888681546220650096895197184";  // 2**234
 const _MINIMUM_TARGET = 2**16;
