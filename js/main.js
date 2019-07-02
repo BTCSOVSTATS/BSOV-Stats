@@ -1,4 +1,5 @@
 
+
 function addToURL(value){
   if (history.pushState) {
     var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + value;
@@ -211,6 +212,7 @@ stats = [
   ['Current Mining Reward',         token.getMiningReward,                _CONTRACT_SYMBOL,   0.00000001, null     ], /* mining */
   ['Epoch Count',                   token.epochCount,                     "",                 1,          null     ], /* mining */
   ['Total Supply',                  token.totalSupply,                    _CONTRACT_SYMBOL,   0.00000001, null     ], /* supply */
+  ['Tokens Burned',                 null,                                 "",                 0.00000001, null     ], /* supply */
   ['',                              null,                                 "",                 1,          null     ], /* */
   ['Token Holders',                 null,                                 "holders",          1,          null     ], /* usage */
   ['Token Transfers',               null,                                 "transfers",        1,          null     ], /* usage */
@@ -371,8 +373,10 @@ function updateStatsThatHaveDependencies(stats) {
   rewards_blocks_remaining_in_era = supply_remaining_in_era / current_reward;
   el_safe('#SupplyRemaininginEra').innerHTML = "<b>" + supply_remaining_in_era.toLocaleString() + "</b> " + _CONTRACT_SYMBOL + " <span style='font-size:0.8em;'>(" + rewards_blocks_remaining_in_era + " blocks)</span>";
 
-  /* time until next epoch ('halvening') */
-  el_safe('#CurrentRewardEra').innerHTML += " <span style='font-size:0.8em;'>(next era: ~" + secondsToReadableTime(rewards_blocks_remaining_in_era * _IDEAL_BLOCK_TIME_SECONDS) + ")</div>";
+  //  tokens burned
+  total_supply = getValueFromStats('Total Supply', stats)
+  burnt_tokens = (21000000 - total_supply)
+  el_safe('#TokensBurned').innerHTML = "<span style='color: red;'><b>" + burnt_tokens.toLocaleString() + " " + _CONTRACT_SYMBOL + "</b></span>"
 
   /* rewards until next readjustment */
   epoch_count = getValueFromStats('Epoch Count', stats)
@@ -860,6 +864,7 @@ function updateStatsTable(stats){
                || stat_name == "Max Supply for Current Era"
                || stat_name == "Supply Remaining in Era"
                || stat_name == "Token Transfers"
+               || stat_name == "Tokens Burned"
                || stat_name == "Total Contract Operations") {
           result = result.toLocaleString()
         }
@@ -896,5 +901,4 @@ function updateAndDisplayAllStats() {
   createStatsTable();
   loadAllStats();
 }
-
 
