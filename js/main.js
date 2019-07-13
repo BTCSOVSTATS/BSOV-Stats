@@ -76,7 +76,8 @@ var pool_colors = {
 
 var known_miners = {
   "0xb3aabf107065817fc4e5c57d2b7ce304e0fe4de7" : ["BSoV Mining Pool",   "https://bsov-pool.hashtables.net", pool_colors.green ], 
-  "0x5c52ee4cde4604c4df27ca283b90f9e722e875db" : ["BSoV Mining Pool",   "https://bsov-pool.hashtables.net", pool_colors.green ], //mint helper
+  "0x5c52ee4cde4604c4df27ca283b90f9e722e875db" : ["BSoV Mining Pool",   "https://bsov-pool.hashtables.net", pool_colors.green ], //mint helper (old)
+  "0x7c5b6a029627bbb251710b8b6e86f606b5aa7d81" : ["BSoV Mining Pool",   "https://bsov-pool.hashtables.net", pool_colors.green ], //mint helper new
   "0xf3243babf74ead828ac656877137df705868fd66" : [ "Token Mining Pool", "http://TokenMiningPool.com",     pool_colors.orange ],
   "0xf118fde3f634e5c47638030ab0514debf39465d1" : [ "Token Mining Pool", "http://TokenMiningPool.com",     pool_colors.orange ], // mint helper contract (old)
   "0xeabe48908503b7efb090f35595fb8d1a4d55bd66" : [ "Token Mining Pool", "http://TokenMiningPool.com",     pool_colors.orange ], // mint helper contract
