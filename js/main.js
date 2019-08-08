@@ -288,7 +288,7 @@ function toReadableThousands(num_value, should_add_b_tags) {
 
 /* convert number to a readable string ("244 Thousand", "3 Billion") */
 function toReadableThousandsLong(num_value, should_add_b_tags) {
-  units = ['', 'Thousand', 'Million', 'Billion'];
+  units = ['', 'Th', 'M', 'B'];
   var final_unit = 'Trillion';
   for(idx in units) {
     var unit = units[idx];
